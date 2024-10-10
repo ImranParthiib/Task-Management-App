@@ -3,25 +3,27 @@ import React from "react";
 
 const TaskList = ({ tasks, onRemove, onToggleComplete }) => {
   return (
-    <ul className="list-disc pl-5">
-      {tasks.map((task, index) => (
+    <ul className="space-y-4">
+      {tasks.map((task) => (
         <li
-          key={index}
-          className="py-1 text-gray-800 border-b border-gray-300 flex justify-between items-center"
+          key={task.id}
+          className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4 shadow-sm flex justify-between items-center transition duration-300 ease-in-out hover:shadow-md border border-blue-100"
         >
           <span
-            className={`flex-1 ${
-              task.completed ? "line-through text-gray-500" : ""
+            className={`flex-1 cursor-pointer text-lg ${
+              task.completed ? "line-through text-gray-500" : "text-gray-800"
             }`}
-            onClick={() => onToggleComplete(index)}
+            onClick={() => onToggleComplete(task.id)}
           >
             {task.name}
           </span>
           <button
-            className="ml-4 text-red-500 hover:text-red-700"
-            onClick={() => onRemove(index)}
+            className="ml-4 text-red-500 hover:text-red-700 focus:outline-none transition duration-300 ease-in-out transform hover:scale-110"
+            onClick={() => onRemove(task.id)}
           >
-            Delete
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
+            </svg>
           </button>
         </li>
       ))}
