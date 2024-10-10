@@ -1,5 +1,6 @@
 ## Task-Management-App
-This is a simple Task Management App built using **React**, **Vite**, ***Tailwind CSS**, and **Supabase** as the backend for storing and managing tasks. This app allows users to add, update, delete, and manage tasks efficiently, making task management easier.
+
+This is a simple Task Management App built using **React**, **Vite**, **\*Tailwind CSS**, and **Supabase** as the backend for storing and managing tasks. This app allows users to add, update, delete, and manage tasks efficiently, making task management easier.
 
 ### Features
 
@@ -19,26 +20,29 @@ This is a simple Task Management App built using **React**, **Vite**, ***Tailwin
 ### Installation
 
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/ImranParthiib/Task-Management-App.git
-    cd Task-Management-App
-    ```
+
+   ```bash
+   git clone https://github.com/ImranParthiib/Task-Management-App.git
+   cd Task-Management-App
+   ```
 
 2. Install dependencies:
-    ```bash
-    npm install
-    ```
+
+   ```bash
+   npm install
+   ```
 
 3. Set up your environment variables. Create a `.env` file in the root of the project:
-    ```bash
-    VITE_SUPABASE_URL=your_supabase_url
-    VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-    ```
+
+   ```bash
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
 
 4. Start the development server:
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 
 ### Usage
 
@@ -74,24 +78,25 @@ This is a simple Task Management App built using **React**, **Vite**, ***Tailwin
 ### Contributing
 
 1. Fork the repo and create your branch:
-    ```bash
-    git checkout -b feature/AmazingFeature
-    ```
+
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
 
 2. Commit your changes:
-    ```bash
-    git commit -m "Add some AmazingFeature"
-    ```
+
+   ```bash
+   git commit -m "Add some AmazingFeature"
+   ```
 
 3. Push to the branch:
-    ```bash
-    git push origin feature/AmazingFeature
-    ```
+
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
 
 4. Open a pull request.
 
 ### License
 
-````markdown
-This project is licensed under the MIT License. See the LICENSE file for details.
-```
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
