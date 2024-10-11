@@ -1,6 +1,6 @@
 ## Task-Management-App
 
-This is a simple Task Management App built using **React**, **Vite**, **\*Tailwind CSS**, and **Supabase** as the backend for storing and managing tasks. This app allows users to add, update, delete, and manage tasks efficiently, making task management easier.
+This is a simple Task Management App built using **React**, **Vite**, **Tailwind CSS**, and **Supabase** as the backend for storing and managing tasks. This app allows users to add, update, delete, and manage tasks efficiently, making task management easier.
 
 ### Features
 
