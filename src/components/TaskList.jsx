@@ -1,34 +1,40 @@
-// src/components/TaskList.jsx
 import React from "react";
+import PropTypes from 'prop-types';
 
 const TaskList = ({ tasks, onRemove, onToggleComplete }) => {
+  if (tasks.length === 0) {
+    return <p className="text-center text-gray-500">No tasks yet. Add a task to get started!</p>;
+  }
+
   return (
     <ul className="space-y-4">
       {tasks.map((task) => (
-        <li
-          key={task.id}
-          className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4 shadow-sm flex justify-between items-center transition duration-300 ease-in-out hover:shadow-md border border-blue-100"
-        >
-          <span
-            className={`flex-1 cursor-pointer text-lg ${
-              task.completed ? "line-through text-gray-500" : "text-gray-800"
-            }`}
-            onClick={() => onToggleComplete(task.id)}
-          >
+        <li key={task.id} className="flex items-center bg-gray-100 p-4 rounded-md">
+          <input
+            type="checkbox"
+            checked={task.completed}
+            onChange={() => onToggleComplete(task.id)}
+            className="mr-4 h-5 w-5 text-blue-500 focus:ring-blue-400"
+          />
+          <span className={`flex-grow ${task.completed ? 'line-through text-gray-500' : ''}`}>
             {task.name}
           </span>
           <button
-            className="ml-4 text-red-500 hover:text-red-700 focus:outline-none transition duration-300 ease-in-out transform hover:scale-110"
             onClick={() => onRemove(task.id)}
+            className="ml-4 text-red-500 hover:text-red-600 focus:outline-none"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
-            </svg>
+            Delete
           </button>
         </li>
       ))}
     </ul>
   );
+};
+
+TaskList.propTypes = {
+  tasks: PropTypes.array.isRequired,
+  onRemove: PropTypes.func.isRequired,
+  onToggleComplete: PropTypes.func.isRequired,
 };
 
 export default TaskList;

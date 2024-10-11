@@ -1,30 +1,30 @@
-import React, { useState } from "react";
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const TaskForm = ({ onSubmit }) => {
-  const [task, setTask] = useState("");
+  const [taskName, setTaskName] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (task.trim()) {
-      onSubmit(task.trim());
-      setTask("");
+    if (taskName.trim()) {
+      onSubmit(taskName.trim());
+      setTaskName('');
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="mb-8">
-      <div className="flex flex-col sm:flex-row gap-4">
+      <div className="flex items-center">
         <input
           type="text"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-          placeholder="Enter your task"
-          className="flex-grow border-2 border-blue-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          value={taskName}
+          onChange={(e) => setTaskName(e.target.value)}
+          placeholder="Enter a new task"
+          className="flex-grow mr-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <button
           type="submit"
-          className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+          className="bg-blue-500 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
         >
           Add Task
         </button>
